@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ประสบการณ์ & ทักษะ | นายกันตพัฒน์ วิเชียรเขียว</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <span class="logo">Portfolio</span>
+    <button class="hamburger" id="hamburger-btn">
+      <img src="IMG/hamburger-icon.png" alt="เมนู" class="hamburger-img">
+    </button>
+  </header>
+  <nav id="side-menu" class="side-menu">
+    <button id="close-menu" class="close-menu">×</button>
+    <a href="index.html">หน้าแรก</a>
+    <a href="portfolio.html">ผลงาน</a>
+    <a href="experience.html">ประสบการณ์ & ทักษะ</a>
+    <a href="contact.html">ติดต่อ</a>
+    <a href="honor.html">เกียรติประวัติ</a>
+  </nav>
+  <div id="menu-overlay" class="menu-overlay"></div>
+  <main class="container experience-container">
+    <h2 class="section-title experience-title">ประสบการณ์ & ทักษะ</h2>
+    <div class="experience-list">
+      <div class="experience-item">
+        <h3>ประสบการณ์</h3>
+        <ul>
+          <li>เข้าร่วมกิจกรรม IS</li>
+          <li>เป็นตัวแทนโรงเรียนในกิจกรรม ...</li>
+          <li>อื่นๆ</li>
+        </ul>
+      </div>
+      <div class="skill-item">
+        <h3>ทักษะ</h3>
+        <ul>
+          <li>การทำงานช่าง</li>
+          <li>การสื่อสาร</li>
+          <li>ไอทีเบื้องต้น</li>
+          <li>อื่นๆ</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+  <script>
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const sideMenu = document.getElementById('side-menu');
+    const closeMenu = document.getElementById('close-menu');
+    const overlay = document.getElementById('menu-overlay');
+    hamburgerBtn.addEventListener('click', function() {
+      sideMenu.classList.add('show');
+      overlay.classList.add('show');
+    });
+    closeMenu.addEventListener('click', function() {
+      sideMenu.classList.remove('show');
+      overlay.classList.remove('show');
+    });
+    overlay.addEventListener('click', function() {
+      sideMenu.classList.remove('show');
+      overlay.classList.remove('show');
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === "Escape") {
+        sideMenu.classList.remove('show');
+        overlay.classList.remove('show');
+      }
+    });
+  </script>
+</body>
+</html>
