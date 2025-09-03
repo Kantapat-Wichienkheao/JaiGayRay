@@ -1,0 +1,411 @@
+body {
+  font-family: 'Sarabun', sans-serif;
+  margin: 0;
+  background: #c8f1ff;
+  color: #222;
+}
+/* Navbar ซ้าย-ขวา */
+.navbar {
+  background: #3b849e;
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* logo ซ้าย, hamburger ขวา */
+  font-size: 1.25rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+.logo {
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 1.35rem;
+}
+.hamburger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hamburger-img {
+  width: 38px;
+  height: 38px;
+}
+
+/* Side Menu Slide */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -28vw;
+  width: 28vw;
+  min-width: 220px;
+  max-width: 340px;
+  height: 100vh;
+  background: #3089a9;
+  box-shadow: 2px 0 18px rgba(59,132,158, 0.18);
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.2rem 1.2rem 1.2rem;
+  transition: left 0.32s cubic-bezier(.85,0,.15,1);
+}
+.side-menu.show {
+  left: 0;
+}
+.side-menu a {
+  background: #b3e2f2;
+  border-radius: 22px;
+  margin-bottom: 1.1rem;
+  padding: 0.7rem 1.1rem;
+  font-size: 1.18rem;
+  color: #222;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s;
+}
+.side-menu a:hover {
+  background: #3b849e;
+  color: #fff;
+}
+.close-menu {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2.3rem;
+  position: absolute;
+  top: 1.3rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
+/* Overlay */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(59,132,158,0.25);
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s;
+}
+.menu-overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Main container */
+.container {
+  max-width: 1050px;
+  margin: 2.8rem auto;
+  padding: 2.2rem 1.2rem;
+  background: #e3f7ff;
+  border-radius: 20px;
+  box-shadow: 0 6px 30px rgba(59,132,158,0.10);
+}
+
+/* Profile card */
+.profile-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 16px rgba(59,132,158,0.09);
+  padding: 2.5rem;
+}
+.profile-img-box {
+  flex-shrink: 0;
+}
+.profile-img {
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border: 3px solid #3b849e;
+  box-shadow: 0 2px 16px rgba(59,132,158,0.09);
+}
+.school-logo {
+  width: 95px;
+  margin: 1.2rem 0 0.7rem 0;
+}
+.main-title {
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: #3b849e;
+  margin-bottom: .7rem;
+}
+.profile-subtitle {
+  font-size: 1.1rem;
+  color: #3089a9;
+  margin-bottom: .6rem;
+}
+.school-name {
+  font-size: 1.25rem;
+  color: #3b849e;
+  margin-bottom: .6rem;
+}
+.quote {
+  margin: 1.1rem 0 .7rem 0;
+  color: #e74a3b;
+  font-size: 1.1rem;
+}
+.quote-title {
+  font-weight: 600;
+}
+.quote-main {
+  font-weight: 700;
+}
+.profile-desc {
+  margin-top: 1rem;
+  color: #223;
+  font-size: 1.09rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .profile-card { flex-direction: column; padding: 1.2rem; }
+  .profile-img { width: 120px; height: 120px; }
+}
+
+/* Portfolio */
+.portfolio-title {
+  font-size: 2.1rem;
+  color: #3b849e;
+  margin-bottom: 2.2rem;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.portfolio-list {
+  display: flex;
+  gap: 2.2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.portfolio-item {
+  background: #eafaff;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(59,132,158,0.07);
+  padding: 2rem 1.2rem;
+  width: 260px;
+  max-width: 98vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.portfolio-img {
+  width: 170px;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  background: #fff;
+  border: 1.5px solid #bce6f8;
+  box-shadow: 0 2px 14px rgba(59,132,158,0.12);
+}
+.portfolio-desc {
+  font-size: 1.09rem;
+  color: #223;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Experience & Skill */
+.experience-title {
+  font-size: 2.1rem;
+  color: #3b849e;
+  margin-bottom: 2.2rem;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.experience-list {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.experience-item, .skill-item {
+  background: #eafaff;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(59,132,158,0.07);
+  padding: 1.7rem 1.2rem;
+  width: 320px;
+  max-width: 98vw;
+}
+.experience-item h3, .skill-item h3 {
+  font-size: 1.2rem;
+  color: #3b849e;
+  font-weight: 700;
+  margin-top: 0;
+}
+.experience-item ul, .skill-item ul {
+  font-size: 1.09rem;
+  margin-left: 1.1rem;
+  color: #223;
+}
+
+/* Contact */
+.contact-title {
+  font-size: 2.1rem;
+  color: #3b849e;
+  margin-bottom: 2.2rem;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.contact-container {
+  background: #e3f7ff;
+  box-shadow: 0 6px 30px rgba(59,132,158,0.10);
+}
+.map-section {
+  text-align: center;
+  margin-bottom: 1.3rem;
+}
+.contact-map-img {
+  width: 240px;
+  border-radius: 13px;
+  box-shadow: 0 2px 10px rgba(59,132,158,0.09);
+}
+.map-desc {
+  font-size: 1rem;
+  color: #3089a9;
+  margin-top: .6rem;
+}
+.contact-info-box {
+  background: #eafaff;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(59,132,158,0.07);
+  padding: 1.7rem 2rem;
+  max-width: 420px;
+  margin: 0 auto;
+}
+.contact-info-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.contact-name {
+  font-size: 1.22rem;
+  color: #3b849e;
+  font-weight: 700;
+  margin-bottom: .5rem;
+}
+.contact-row {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: 1.09rem;
+  color: #223;
+}
+.contact-icon {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+  margin-right: .4rem;
+}
+
+/* Honor */
+.honor-container {
+  background: #e3f7ff;
+  box-shadow: 0 6px 30px rgba(59,132,158,0.10);
+}
+.honor-title {
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: #3b849e;
+  margin-bottom: 2.2rem;
+  text-align: center;
+  letter-spacing: 2px;
+}
+.honor-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.2rem;
+}
+.honor-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #eafaff;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(59,132,158,0.07);
+  padding: 1.2rem 1.2rem .7rem 1.2rem;
+}
+.honor-full {
+  width: 100%;
+  max-width: 400px;
+}
+.honor-row {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+}
+.honor-half {
+  max-width: 260px;
+  width: 100%;
+}
+.honor-img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 0.7rem;
+  box-shadow: 0 2px 14px rgba(59,132,158,0.12);
+  background: #fff;
+  border: 1.5px solid #bce6f8;
+  object-fit: contain;
+}
+.honor-img-full {
+  max-width: 330px;
+  height: auto;
+}
+.honor-img-half {
+  max-width: 210px;
+  height: auto;
+}
+.honor-desc {
+  font-size: 1.15rem;
+  color: #223;
+  text-align: center;
+  line-height: 1.7;
+  font-weight: 500;
+  margin-top: 0.3rem;
+  margin-bottom: 0.2rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .container { padding: 1rem .3rem; }
+  .main-title, .portfolio-title, .experience-title, .contact-title, .honor-title { font-size: 1.5rem; }
+  .profile-img { width: 90px; height: 90px; }
+  .school-logo { width: 60px; }
+  .portfolio-item, .experience-item, .skill-item { width: 95vw; }
+}
+@media (max-width: 700px) {
+  .side-menu {
+    width: 75vw;
+    min-width: 0;
+    max-width: 100vw;
+    left: -75vw;
+  }
+  .side-menu.show {
+    left: 0;
+  }
+  .honor-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+  }
+  .honor-half {
+    max-width: 98%;
+  }
+  .honor-img-half, .honor-img-full {
+    max-width: 95vw;
+  }
+}
