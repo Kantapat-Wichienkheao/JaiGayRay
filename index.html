@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio | นายกันตพัฒน์ วิเชียรเขียว</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <span class="logo">Portfolio</span>
+    <button class="hamburger" id="hamburger-btn">
+      <img src="IMG/hamburger-icon.png" alt="เมนู" class="hamburger-img">
+    </button>
+  </header>
+  <nav id="side-menu" class="side-menu">
+    <button id="close-menu" class="close-menu">×</button>
+    <a href="index.html">หน้าแรก</a>
+    <a href="portfolio.html">ผลงาน</a>
+    <a href="experience.html">ประสบการณ์ & ทักษะ</a>
+    <a href="contact.html">ติดต่อ</a>
+    <a href="honor.html">เกียรติประวัติ</a>
+  </nav>
+  <div id="menu-overlay" class="menu-overlay"></div>
+  <main class="container main-container">
+    <div class="profile-card">
+      <div class="profile-img-box">
+        <img src="IMG/profile.png" alt="Profile" class="profile-img">
+      </div>
+      <div class="profile-info">
+        <h2 class="main-title">นายกันตพัฒน์ วิเชียรเขียว</h2>
+        <p class="profile-subtitle">สวัสดีจ้า...ยินดีที่ได้รู้จัก...เราชื่ออธิบายเอง</p>
+        <img src="IMG/logo.png" alt="โรงเรียนสวนกุหลาบวิทยาลัย นนทบุรี" class="school-logo">
+        <p class="school-name">Suankularb Wittayalai Nonthaburi</p>
+        <div class="quote">
+          <span class="quote-title">คำคม</span><br>
+          <span class="quote-main">ถึงชีวิตจะไม่แน่นอน แต่ถ้ามีหมอนจะนอนแน่</span>
+        </div>
+        <div class="profile-desc">
+          สวัสดีครับ ผมเป็นนักเรียนคนหนึ่งที่เรียนอยู่ ม.6 ผมขับรถได้และสามารถทำงานช่างได้เล็กๆน้อยๆถึงปานกลาง ตอนนี้ผมมีเป้าหมายคือ อยากมีมหาวิทยาลัยเรียน ถ้าได้จุฬาฯก็ดีเพี้ยงวิศวะ แต่จริงๆก็ฝันเป็นมหาวิทยาลัยธรรมศาสตร์หรือเกษตรศาสตร์
+        </div>
+      </div>
+    </div>
+  </main>
+  <script>
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const sideMenu = document.getElementById('side-menu');
+    const closeMenu = document.getElementById('close-menu');
+    const overlay = document.getElementById('menu-overlay');
+    hamburgerBtn.addEventListener('click', function() {
+      sideMenu.classList.add('show');
+      overlay.classList.add('show');
+    });
+    closeMenu.addEventListener('click', function() {
+      sideMenu.classList.remove('show');
+      overlay.classList.remove('show');
+    });
+    overlay.addEventListener('click', function() {
+      sideMenu.classList.remove('show');
+      overlay.classList.remove('show');
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === "Escape") {
+        sideMenu.classList.remove('show');
+        overlay.classList.remove('show');
+      }
+    });
+  </script>
+</body>
+</html>
